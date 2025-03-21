@@ -65,7 +65,7 @@ You should see the Django rocket ready for lift-off 🚀
 ├── entrypoint.sh         # Waits for DB before starting Django
 ├── manage.py
 ├── requirements.txt
-└── django_config/  # Default Django project directory
+└── django_config/  # Default Django config directory
     ├── __init__.py
     ├── settings.py
     ├── urls.py
