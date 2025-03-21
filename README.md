@@ -32,15 +32,19 @@ git clone https://github.com/LeeRobertsMe/docker-django-template your-django-pro
 cd your-project-name
 ```
 
-### 2. Set Up Environment
+### 2. Database Environment
 
-Copy the example env file and customise:
+This project is pre-configured to use PostgreSQL via Docker Compose.
+
+To configure your local database connection, copy the example environment file:
 
 ```bash
 cp .env.example .env
 ```
 
-Edit .env with your desired configuration (DB name, password, etc).
+Edit the .env file and update the configuration values as desired. The database container will be available under the hostname db inside Docker.
+
+ℹ️ This template does not use SQLite — all persistence is handled through Postgres.
 
 ### 3. Build & Start the App
 
