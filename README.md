@@ -3,6 +3,7 @@
 A clean, production-ready Docker setup for starting new Django projects fast.
 
 This template provides a solid starting point with:
+
 - Django 5.x
 - PostgreSQL database
 - Docker & Docker Compose
@@ -16,8 +17,8 @@ This template provides a solid starting point with:
 
 ## 🧱 Stack
 
-- **Backend:** Python 3.11 + Django 5.x  
-- **Database:** PostgreSQL 15  
+- **Backend:** Python 3.11 + Django 5.x
+- **Database:** PostgreSQL 15
 - **Containerisation:** Docker + Docker Compose
 
 ---
@@ -32,11 +33,13 @@ cd your-project-name
 ```
 
 ### 2. Set Up Environment
+
 Copy the example env file and customise:
 
 ```bash
 cp .env.example .env
 ```
+
 Edit .env with your desired configuration (DB name, password, etc).
 
 ### 3. Build & Start the App
@@ -44,8 +47,9 @@ Edit .env with your desired configuration (DB name, password, etc).
 ```bash
 docker-compose up --build
 ```
+
 Once it’s built and running, head to:
- [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+[http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
 You should see the Django rocket ready for lift-off 🚀
 
@@ -61,7 +65,7 @@ You should see the Django rocket ready for lift-off 🚀
 ├── entrypoint.sh         # Waits for DB before starting Django
 ├── manage.py
 ├── requirements.txt
-└── your_django_project_name/  # Default Django project directory
+└── django_config/  # Default Django project directory
     ├── __init__.py
     ├── settings.py
     ├── urls.py
@@ -72,6 +76,7 @@ You should see the Django rocket ready for lift-off 🚀
 ---
 
 ## ✅ Features
+
 - 🐘 PostgreSQL for production-grade data handling
 - 🔁 Auto-restarts with runserver on file change
 - 🕶️ Isolated, portable dev environment
@@ -80,6 +85,7 @@ You should see the Django rocket ready for lift-off 🚀
 ---
 
 ## 🔄 Development Tips
+
 - docker-compose down -v wipes DB volume if needed
 - Add your own apps, models, views as usual
 - Swap runserver for gunicorn + nginx when ready for prod
@@ -88,8 +94,9 @@ You should see the Django rocket ready for lift-off 🚀
 ---
 
 ## 🧑‍💻 Author
+
 Lee Roberts
- 🔗 [LeeRobertsMe](https://github.com/LeeRobertsMe)
+🔗 [LeeRobertsMe](https://github.com/LeeRobertsMe)
 
 ---
 
@@ -105,6 +112,7 @@ If you'd like to help improve this template or adapt it for a use case, feel fre
 ---
 
 ## 📜 License
+
 This project is licensed under the MIT License.
 You are free to use, modify, distribute, and build upon this code, commercially or privately.
 
@@ -116,4 +124,3 @@ See the LICENSE file for the full text.
 ![Python](https://img.shields.io/badge/Python-3.11-blue.svg)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-blue)
 ![MIT License](https://img.shields.io/badge/license-MIT-green.svg)
-
