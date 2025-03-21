@@ -27,7 +27,7 @@ This template provides a solid starting point with:
 ### 1. Clone the Template
 
 ```bash
-git clone https://github.com/LeeRobertsMe/docker-django-template your-project-name
+git clone https://github.com/LeeRobertsMe/docker-django-template your-django-project-name
 cd your-project-name
 ```
 
@@ -61,7 +61,7 @@ You should see the Django rocket ready for lift-off 🚀
 ├── entrypoint.sh         # Waits for DB before starting Django
 ├── manage.py
 ├── requirements.txt
-└── your_django_project/  # Default Django project directory
+└── your_django_project_name/  # Default Django project directory
     ├── __init__.py
     ├── settings.py
     ├── urls.py
