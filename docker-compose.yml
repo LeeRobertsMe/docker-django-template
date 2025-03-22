@@ -11,10 +11,10 @@ services:
     depends_on:
       - db
 
-# Uses values from .env
-# All variables follow the POSTGRES_* naming convention
+  # Uses values from .env
+  # All variables follow the POSTGRES_* naming convention
 
-    db:
+  db:
     image: postgres:15
     restart: always
     volumes:
@@ -25,7 +25,6 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     ports:
       - "5432:5432"
-
 
 volumes:
   postgres_data:
