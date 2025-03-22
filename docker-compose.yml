@@ -11,6 +11,9 @@ services:
     depends_on:
       - db
 
+# Uses values from .env
+# All variables follow the POSTGRES_* naming convention
+
     db:
     image: postgres:15
     restart: always
