@@ -7,8 +7,8 @@ This template provides a solid starting point with:
 - Django 5.x
 - PostgreSQL database
 - Docker & Docker Compose
-- Pip + `requirements.txt`
-- `.env` support for local config
+- Pip + requirements.txt
+- .env support for local config
 - Entry script to wait for the DB before starting
 - PostgreSQL volume for persistent data
 - GitHub-ready structure
@@ -17,9 +17,9 @@ This template provides a solid starting point with:
 
 ## 🧱 Stack
 
-- **Backend:** Python 3.11 + Django 5.x
-- **Database:** PostgreSQL 15
-- **Containerisation:** Docker + Docker Compose
+- Backend: Python 3.11 + Django 5.x
+- Database: PostgreSQL 15
+- Containerisation: Docker + Docker Compose
 
 ---
 
@@ -27,104 +27,97 @@ This template provides a solid starting point with:
 
 ### 1. Clone the Template
 
-```bash
-git clone https://github.com/LeeRobertsMe/docker-django-template your-django-project-name
-cd your-project-name
-```
+git clone https://github.com/LeeRobertsMe/docker-django-template your-django-project-name  
+cd your-django-project-name
 
-### 2. Database Environment
+### 2. Environment Setup
 
-This project is pre-configured to use PostgreSQL via Docker Compose.
-
-To configure your local database connection, copy the example environment file:
-
-```bash
 cp .env.example .env
-```
 
-Edit the .env file and update the configuration values as desired. The database container will be available under the hostname db inside Docker.
+Then edit `.env` to customise values like your `SECRET_KEY`, `DEBUG`, and database credentials.
 
-ℹ️ This template does not use SQLite — all persistence is handled through Postgres.
+ℹ️ This template does not use SQLite — all data is persisted via PostgreSQL inside Docker.
 
 ### 3. Build & Start the App
 
-```bash
 docker-compose up --build
-```
 
-Once it’s built and running, head to:
-[http://127.0.0.1:8000/](http://127.0.0.1:8000/)
-
-You should see the Django rocket ready for lift-off 🚀
+Visit: http://127.0.0.1:8000/
 
 ---
 
 ## 📂 Folder Structure
 
-```bash
-├── .env.example          # Example .env config (never commit your real .env)
-├── .gitignore
-├── Dockerfile
-├── docker-compose.yml
-├── entrypoint.sh         # Waits for DB before starting Django
-├── manage.py
-├── requirements.txt
-└── django_config/  # Default Django config directory
-    ├── __init__.py
-    ├── settings.py
-    ├── urls.py
-    ├── wsgi.py
-    └── asgi.py
-```
+- .env.example
+- .gitignore
+- Dockerfile
+- docker-compose.yml
+- entrypoint.sh
+- manage.py
+- requirements.txt
+- django_config/
+
+---
+
+## ⚙️ Environment Variables
+
+Required in `.env`:
+
+DEBUG  
+SECRET_KEY  
+DJANGO_ALLOWED_HOSTS  
+POSTGRES_DB  
+POSTGRES_USER  
+POSTGRES_PASSWORD  
+POSTGRES_HOST  
+POSTGRES_PORT
+
+Example `.env`:
+
+DEBUG=True  
+SECRET_KEY=changeme123  
+DJANGO_ALLOWED_HOSTS=127.0.0.1,localhost  
+POSTGRES_DB=docker_db  
+POSTGRES_USER=postgres  
+POSTGRES_PASSWORD=changeme  
+POSTGRES_HOST=db  
+POSTGRES_PORT=5432
 
 ---
 
 ## ✅ Features
 
-- 🐘 PostgreSQL for production-grade data handling
-- 🔁 Auto-restarts with runserver on file change
-- 🕶️ Isolated, portable dev environment
-- 🔐 Secrets stored via .env (excluded from Git)
-
----
-
-## 🔄 Development Tips
-
-- docker-compose down -v wipes DB volume if needed
-- Add your own apps, models, views as usual
-- Swap runserver for gunicorn + nginx when ready for prod
-- Reuse this template for all your Django + Docker projects
+- PostgreSQL backend
+- Hot reload
+- Portable dev environment
+- Secrets via `.env`
+- MIT License
 
 ---
 
 ## 🧑‍💻 Author
 
-Lee Roberts
-🔗 [LeeRobertsMe](https://github.com/LeeRobertsMe)
+Lee Roberts — https://github.com/LeeRobertsMe
 
 ---
 
 ## 🤝 Contributing
 
-If you'd like to help improve this template or adapt it for a use case, feel free to fork the repository and open a pull request. All constructive feedback and improvements are welcome.
-
-1. Fork the repo
-2. Create a new branch
-3. Make your changes
-4. Submit a PR with a short, clear description
+1. Fork
+2. Create a branch
+3. Commit changes
+4. PR with clear description
 
 ---
 
 ## 📜 License
 
-This project is licensed under the MIT License.
-You are free to use, modify, distribute, and build upon this code, commercially or privately.
-
-See the LICENSE file for the full text.
+MIT License — see `LICENSE` file.
 
 ---
 
-![Docker](https://img.shields.io/badge/Docker-ready-blue)
-![Python](https://img.shields.io/badge/Python-3.11-blue.svg)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-blue)
-![MIT License](https://img.shields.io/badge/license-MIT-green.svg)
+Badges:  
+[Docker-ready]  
+[Python 3.11]  
+[PostgreSQL 15]  
+[MIT License]
