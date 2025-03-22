@@ -32,15 +32,15 @@ cd your-django-project-name
 
 ### 2. Environment Setup
 
-cp .env.example .env
+`cp .env.example .env`
 
-Then edit `.env` to customise values like your `SECRET_KEY`, `DEBUG`, and database credentials.
+Then edit .env to customise values like your SECRET_KEY, DEBUG, and database credentials.
 
 ℹ️ This template does not use SQLite — all data is persisted via PostgreSQL inside Docker.
 
 ### 3. Build & Start the App
 
-docker-compose up --build
+`docker-compose up --build`
 
 Visit: http://127.0.0.1:8000/
 
@@ -61,18 +61,7 @@ Visit: http://127.0.0.1:8000/
 
 ## ⚙️ Environment Variables
 
-Required in `.env`:
-
-DEBUG  
-SECRET_KEY  
-DJANGO_ALLOWED_HOSTS  
-POSTGRES_DB  
-POSTGRES_USER  
-POSTGRES_PASSWORD  
-POSTGRES_HOST  
-POSTGRES_PORT
-
-Example `.env`:
+Required/Example `.env` file:
 
 DEBUG=True  
 SECRET_KEY=changeme123  
@@ -115,9 +104,3 @@ Lee Roberts — https://github.com/LeeRobertsMe
 MIT License — see `LICENSE` file.
 
 ---
-
-Badges:  
-[Docker-ready]  
-[Python 3.11]  
-[PostgreSQL 15]  
-[MIT License]
